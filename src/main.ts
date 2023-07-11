@@ -4,6 +4,11 @@ import { AppService } from './app.service';
 
 async function bootstrap() {
   const app = await NestFactory.createApplicationContext(AppModule);
-  await app.get(AppService).runOfferJob();
+  const offerEntityObjects = await app.get(AppService).runOfferJob();
+  console.log(
+    `\nSuccessfully transformed offers: `,
+    offerEntityObjects.flat().filter((o) => o),
+  );
 }
+
 bootstrap();

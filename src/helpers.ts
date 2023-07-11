@@ -1,3 +1,4 @@
+import { ValidationError } from 'class-validator';
 import { Offer1PayloadAdapter } from './adapters/Offer1PayloadAdapter';
 import { Offer2PayloadAdapter } from './adapters/Offer2PayloadAdapter';
 import { Offer1DataResolver } from './data/Offer1DataResolver';
@@ -15,3 +16,7 @@ export const CONFIGS_BY_PROVIDER = {
 } as const;
 
 export type OfferProvider = keyof typeof CONFIGS_BY_PROVIDER;
+
+export const flattenValidationErrorMessage = (errors: ValidationError[]) => {
+  return errors.flatMap((err) => Object.values(err.constraints || {}));
+};
