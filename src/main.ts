@@ -4,6 +4,6 @@ import { AppService } from './app.service';
 
 async function bootstrap() {
   const app = await NestFactory.createApplicationContext(AppModule);
-  app.get(AppService).runOfferJob();
+  await app.get(AppService).runOfferJob();
 }
 bootstrap();
