@@ -1,4 +1,4 @@
-import { IOffer1Data } from 'src/data/IOffer1Data';
+import { IOffer1Data } from 'src/adapters/data/IOffer1Data';
 import { IOfferDataResolver } from './IOfferDataResolver';
 
 export class Offer1DataResolver implements IOfferDataResolver<IOffer1Data> {

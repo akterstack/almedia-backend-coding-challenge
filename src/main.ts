@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.createApplicationContext(AppModule);
   const offerEntityObjects = await app.get(AppService).runOfferJob();
   console.log(
-    `\nSuccessfully transformed offers: `,
+    `[LOG] Successfully transformed offers: ${offerEntityObjects.length}\n`,
     offerEntityObjects.flat().filter((o) => o),
   );
 }

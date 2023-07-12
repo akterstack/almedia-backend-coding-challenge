@@ -1,8 +1,8 @@
 import { ValidationError } from 'class-validator';
 import { Offer1PayloadAdapter } from './adapters/Offer1PayloadAdapter';
 import { Offer2PayloadAdapter } from './adapters/Offer2PayloadAdapter';
-import { Offer1DataResolver } from './data/Offer1DataResolver';
-import { Offer2DataResolver } from './data/Offer2DataResolver';
+import { Offer1DataResolver } from './adapters/data/Offer1DataResolver';
+import { Offer2DataResolver } from './adapters/data/Offer2DataResolver';
 
 export const CONFIGS_BY_PROVIDER = {
   offer1: {

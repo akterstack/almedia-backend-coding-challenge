@@ -1,8 +1,9 @@
-import { IOffer1Data } from 'src/data/IOffer1Data';
+import { IOffer1Data } from 'src/adapters/data/IOffer1Data';
 import { IPayloadAdapter } from './IPayloadAdapter';
 import { IOfferCreateDto } from 'src/dto/IOfferCreateDto';
 
 export class Offer1PayloadAdapter
+  // There is no mapping for `slug` in provider response, it will be generated inside DTO
   implements IPayloadAdapter, Omit<IOfferCreateDto, 'slug'>
 {
   constructor(readonly payload: IOffer1Data) {}
